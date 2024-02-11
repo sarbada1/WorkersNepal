@@ -19,10 +19,11 @@ class UserController extends Controller
     {
         return view('auth.register');
     }
+    
     public function registerUser(Request $req)
     {
         $req->validate([
-            'username' => 'required',
+            
             'email' => 'required|email|unique:users',
             'mobile_no' => 'required|max:10',
             'password' => [

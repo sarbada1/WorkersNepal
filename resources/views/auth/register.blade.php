@@ -60,7 +60,7 @@
                                 <div class="password-container position-relative">
                                     <input type="password" class="form-control" id="password" name="password">
                                     <i class="fa fa-eye" onclick="togglepassword(this)"
-                                        style="position: absolute; right: 10px; top: 10px; cursor: pointer;" ></i>
+                                        style="position: absolute; right: 10px; top: 10px; cursor: pointer;"></i>
                                 </div>
                                 <span class="text-danger" id="password-error">
                                     <!-- Your server-side error message will be displayed here -->
@@ -73,25 +73,29 @@
                             <div class="form-group">
                                 <label for="confirmPassword">Confirm Password<span class="text-danger">*</span></label>
                                 <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
-                                <span class="text-danger">
-                                    @error('confirmPassword')
-                                        {{ $message }}
-                                    @enderror
-                                </span>
-                            </div>
-                    </div>
-                    <button type="submit" class="btn btn-info mx-2">Sign up</button>
-                    </form>
-                    <div class="d-flex justify-content-end">
-                        <a href="{{ route('auth.signin') }}" class="mt-3 text-decoration-none me-4 mb-2 ">Sign in
-                            Here</a>
+                                <div class="password-container position-relative">
 
+                                    <i class="fa fa-eye" onclick="togglepassword(this)"
+                                        style="position: absolute; right: 10px; top: 10px; cursor: pointer;"></i>
+                                    <span class="text-danger">
+                                        @error('confirmPassword')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-info mx-2">Sign up</button>
+                        </form>
+                        <div class="d-flex justify-content-end">
+                            <a href="{{ route('auth.signin') }}" class="mt-3 text-decoration-none me-4 mb-2 ">Sign in
+                                Here</a>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    @include('layouts.footer')
+        @include('layouts.footer')
 
 </body>
 
